@@ -66,10 +66,5 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
         context.startActivity(intent);
     }
 
-    public void bypassButton(View view) {
-        Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(context, MainActivity.class);
-        context.startActivity(intent);
-    }
 
 }

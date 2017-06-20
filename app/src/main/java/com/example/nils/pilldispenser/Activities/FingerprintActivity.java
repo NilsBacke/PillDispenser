@@ -1,5 +1,6 @@
 package com.example.nils.pilldispenser.Activities;
         import android.app.KeyguardManager;
+        import android.content.Intent;
         import android.content.pm.PackageManager;
         import android.hardware.fingerprint.FingerprintManager;
         import android.Manifest;
@@ -10,7 +11,9 @@ package com.example.nils.pilldispenser.Activities;
         import android.security.keystore.KeyProperties;
         import android.support.v7.app.AppCompatActivity;
         import android.support.v4.app.ActivityCompat;
+        import android.view.View;
         import android.widget.TextView;
+        import android.widget.Toast;
 
         import com.example.nils.pilldispenser.FingerprintHandler;
         import com.example.nils.pilldispenser.R;
@@ -168,10 +171,19 @@ public class FingerprintActivity extends AppCompatActivity {
         }
     }
 
+
+    public void bypassButton(View view) {
+        Toast.makeText(this, "Success!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(FingerprintActivity.this, MainActivity.class);
+        this.startActivity(intent);
+    }
+
     private class FingerprintException extends Exception {
         public FingerprintException(Exception e) {
             super(e);
         }
     }
+
+
 }
 
