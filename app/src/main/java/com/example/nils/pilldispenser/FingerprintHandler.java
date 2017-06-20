@@ -7,6 +7,7 @@ package com.example.nils.pilldispenser;
         import android.Manifest;
         import android.os.CancellationSignal;
         import android.support.v4.app.ActivityCompat;
+        import android.view.View;
         import android.widget.Toast;
 
         import com.example.nils.pilldispenser.Activities.MainActivity;
@@ -60,6 +61,12 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
     @Override
     //onAuthenticationSucceeded is called when a fingerprint has been successfully matched to one of the fingerprints stored on the user’s device//
     public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
+        Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
+
+    public void bypassButton(View view) {
         Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
