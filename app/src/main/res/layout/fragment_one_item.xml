@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nils.pilldispenser.Fragments.ConfigADayActivity"
+    >
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="2dp"
+        android:padding="5dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/quantitytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/label"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp" />
+
+    <Button
+        android:id="@+id/changeqbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quantitytext"
+        android:layout_centerHorizontal="true"
+        android:text="Change Quantity"
+        android:padding="5dp" />
+
+
+</RelativeLayout>

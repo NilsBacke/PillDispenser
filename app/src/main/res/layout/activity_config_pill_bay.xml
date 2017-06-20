@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/button_replacelist" />
+
+    <Button
+        android:id="@+id/button_replacelist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:onClick="addAPillBayButton"
+        android:text="Add a Pill Bay"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:typeface="normal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/saveconfigbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/list"
+        android:layout_toEndOf="@+id/button_replacelist"
+        android:fontFamily="serif"
+        android:onClick="saveConfigButton"
+        android:text="Save Config"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:typeface="normal" />
+
+</RelativeLayout>
