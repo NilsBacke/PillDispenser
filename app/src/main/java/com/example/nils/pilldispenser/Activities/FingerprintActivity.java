@@ -171,7 +171,7 @@ public class FingerprintActivity extends AppCompatActivity {
         }
     }
 
-
+    //Temporary
     public void bypassButton(View view) {
         Toast.makeText(this, "Success!", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(FingerprintActivity.this, MainActivity.class);
