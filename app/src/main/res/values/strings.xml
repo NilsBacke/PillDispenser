@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pill Dispenser</string>
+    <string name="app_name">Pill Pro</string>
     <string name="instructions">Place your fingertip on the Home button to verify your identity</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_home">Home</string>
