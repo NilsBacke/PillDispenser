@@ -61,6 +61,38 @@ public class ConfigPillBayActivity extends AppCompatActivity {
         updateList();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        db.clearDatabase("pillbay");
+        db.clearDatabase("sunday");
+        db.clearDatabase("monday");
+        db.clearDatabase("tuesday");
+        db.clearDatabase("wednesday");
+        db.clearDatabase("thursday");
+        db.clearDatabase("friday");
+        db.clearDatabase("saturday");
+
+        for (ListElement listele : itemlist) {
+            db.addElement("pillbay", listele);
+            db.addElement("sunday", listele);
+            db.addElement("monday", listele);
+            db.addElement("tuesday", listele);
+            db.addElement("wednesday", listele);
+            db.addElement("thursday", listele);
+            db.addElement("friday", listele);
+            db.addElement("saturday", listele);
+        }
+        itemlist.clear();
+        itemlist.addAll(db.getAllElements("pillbay"));
+        updateList();
+        Toast.makeText(ConfigPillBayActivity.this,  "The configuration has been saved.",
+                Toast.LENGTH_SHORT).show();
+        Toast.makeText(ConfigPillBayActivity.this,  "All of the day's regiments have been reset.",
+                Toast.LENGTH_SHORT).show();
+
+    }
+
     /**
      * This method is automatically called when a new intent is passed to this activity.
      * @param intent The passed intent.
@@ -137,19 +169,6 @@ public class ConfigPillBayActivity extends AppCompatActivity {
 
         itemlist.add(new ListElement(counter, ""));
         updateList();
-    }
-
-    public void saveConfigButton(View view) {
-        db.clearDatabase("pillbay");
-
-        for (ListElement listele : itemlist) {
-            db.addElement("pillbay", listele);
-        }
-        itemlist.clear();
-        itemlist.addAll(db.getAllElements("pillbay"));
-        updateList();
-        Toast.makeText(ConfigPillBayActivity.this,  "The list has been saved.",
-                Toast.LENGTH_SHORT).show();
     }
 
 }

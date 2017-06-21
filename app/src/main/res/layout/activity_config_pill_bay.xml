@@ -22,21 +22,7 @@
         android:textStyle="bold|italic"
         android:typeface="normal"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:id="@+id/saveconfigbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/list"
-        android:layout_toEndOf="@+id/button_replacelist"
-        android:fontFamily="serif"
-        android:onClick="saveConfigButton"
-        android:text="Save Config"
-        android:textSize="18sp"
-        android:textStyle="bold|italic"
-        android:typeface="normal" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
