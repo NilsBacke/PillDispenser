@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:orientation="horizontal">
 
     <TextView
@@ -10,13 +11,15 @@
         android:layout_height="wrap_content"
         android:paddingBottom="50px"
         android:paddingLeft="15px"
-        android:text="Bay #:" />
+        android:text="Bay #:"
+        android:textColor="@color/colorAccent" />
 
     <EditText
         android:id="@+id/bayname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingBottom="50px"/>
+        android:paddingBottom="50px"
+        android:textColor="@color/colorAccent" />
 
 </LinearLayout>

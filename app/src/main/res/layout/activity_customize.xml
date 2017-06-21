@@ -4,27 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     tools:context="com.example.nils.pilldispenser.Activities.MainActivity">
 
     <Button
         android:id="@+id/dispenseday"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/buttoncolor"
         android:onClick="configPillBayButton"
-        android:text="Configure a Pill Bay" />
+        android:text="Configure a Pill Bay"
+        android:textColor="@color/colorAccent" />
 
     <Button
         android:id="@+id/dispenseindiv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/dispenseday"
+        android:layout_marginTop="50dp"
+        android:background="@color/buttoncolor"
         android:onClick="configADayButton"
-        android:text="Configure a Day's Regiment" />
+        android:text="Configure a Day's Regiment"
+        android:textColor="@color/colorAccent" />
 
 </android.widget.LinearLayout>
