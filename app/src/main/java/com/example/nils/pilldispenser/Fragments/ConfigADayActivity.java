@@ -86,7 +86,7 @@ public class ConfigADayActivity extends AppCompatActivity {
         }
     }
 
-    public ArrayList<ListElement> getList() {
-        return db.getAllElements();
+    public ArrayList<ListElement> getList(String tableName) {
+        return db.getAllElements(tableName);
     }
 }

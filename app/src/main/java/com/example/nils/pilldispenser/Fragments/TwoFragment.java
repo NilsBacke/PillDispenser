@@ -37,7 +37,10 @@ public class TwoFragment extends Fragment {
 
         listView = (ListView) view.findViewById(R.id.fraglistview);
         list = new ArrayList<>();
-        list.addAll(((ConfigADayActivity)getActivity()).getList());
+        list.addAll(((ConfigADayActivity)getActivity()).getList("monday"));
+        if (list.isEmpty()) {
+            list.addAll(((ConfigADayActivity)getActivity()).getList("pillbay"));
+        }
         Log.d("ArrayList", list.toString());
         ConfigDayFragmentCustomAdapter adapter = new ConfigDayFragmentCustomAdapter(getActivity(), list, 2);
         listView.setAdapter(adapter);

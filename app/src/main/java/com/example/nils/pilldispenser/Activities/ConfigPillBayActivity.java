@@ -39,9 +39,9 @@ public class ConfigPillBayActivity extends AppCompatActivity {
 
         savedlist = getSharedPreferences("list", MODE_PRIVATE);
 
-        itemlist.addAll(db.getAllElements());
+        itemlist.addAll(db.getAllElements("pillbay"));
 
-        setTitle("Configure a Day's Regiment");
+        setTitle("Configure a Pill Bay");
         updateList();
     }
 
@@ -143,10 +143,10 @@ public class ConfigPillBayActivity extends AppCompatActivity {
         db.clearDatabase("pillbay");
 
         for (ListElement listele : itemlist) {
-            db.addElement(listele);
+            db.addElement("pillbay", listele);
         }
         itemlist.clear();
-        itemlist.addAll(db.getAllElements());
+        itemlist.addAll(db.getAllElements("pillbay"));
         updateList();
         Toast.makeText(ConfigPillBayActivity.this,  "The list has been saved.",
                 Toast.LENGTH_SHORT).show();

@@ -26,20 +26,50 @@ public class ConfigDayFragmentCustomAdapter extends BaseAdapter implements ListA
 
     private ArrayList<DayRegiment> items;
     private Context context;
+    private PillBayDatabaseHelper db;
+    private String day;
 
     /**
      * Constructs a new CustomAdapter class from context.
      *
      * @param context The context of the class that constructs the object.
      */
-    public ConfigDayFragmentCustomAdapter(Context context, ArrayList<ListElement> listitems, int day) {
+    public ConfigDayFragmentCustomAdapter(Context context, ArrayList<ListElement> listitems, int daynumber) {
         this.context = context;
+        db = PillBayDatabaseHelper.getInstance(context);
+
         items = new ArrayList<>();
 
         for (int i = 0; i < listitems.size(); i++) {
-            DayRegiment dayreg = new DayRegiment(listitems.get(i).number, listitems.get(i).name, listitems.get(i).quantity, day);
+            DayRegiment dayreg = new DayRegiment(listitems.get(i).number, listitems.get(i).name, listitems.get(i).quantity, daynumber);
             Log.d("DAYREG", dayreg.toString());
             items.add(dayreg);
+        }
+
+        switch (daynumber) {
+            case 1:
+                day = "sunday";
+                break;
+            case 2:
+                day = "monday";
+                break;
+            case 3:
+                day = "tuesday";
+                break;
+            case 4:
+                day = "wednesday";
+                break;
+            case 5:
+                day = "thursday";
+                break;
+            case 6:
+                day = "friday";
+                break;
+            case 7:
+                day = "saturday";
+                break;
+            default:
+                day = "";
         }
     }
 
@@ -117,7 +147,7 @@ public class ConfigDayFragmentCustomAdapter extends BaseAdapter implements ListA
                 d.setView(dialogView);
                 final NumberPicker numberPicker = (NumberPicker) dialogView.findViewById(R.id.dialog_number_picker);
                 numberPicker.setMaxValue(20);
-                numberPicker.setMinValue(1);
+                numberPicker.setMinValue(0);
                 numberPicker.setWrapSelectorWheel(false);
                 numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
                     @Override
@@ -129,7 +159,19 @@ public class ConfigDayFragmentCustomAdapter extends BaseAdapter implements ListA
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         items.get(position).quantity = numberPicker.getValue();
+
+                        if (!db.getAllElements(day).isEmpty()) {
+                            db.clearDatabase(day);
+                        }
+
+                        for (DayRegiment dayreg: items) {
+                            db.addElement(day, dayreg);
+                        }
+
                         notifyDataSetChanged();
+                        String daystr = day.substring(0,1).toUpperCase() + day.substring(1);
+                        Toast.makeText(context, "Quantity of " + items.get(position).name + " on " + daystr + " set to " + items.get(position).quantity, Toast.LENGTH_SHORT).show();
+
                     }
                 });
                 d.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
