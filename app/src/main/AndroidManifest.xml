@@ -33,7 +33,9 @@
         <activity
             android:name=".Fragments.ConfigADayActivity"
             android:label="@string/title_activity_config_aday"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activities.DispenseDayActivity" />
+        <activity android:name=".Activities.DispenseIndivActivity"></activity>
     </application>
 
 </manifest>
