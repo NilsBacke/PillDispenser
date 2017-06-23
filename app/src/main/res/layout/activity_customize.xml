@@ -20,7 +20,8 @@
         android:background="@color/buttoncolor"
         android:onClick="configPillBayButton"
         android:text="Configure a Pill Bay"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/dispenseindiv"
@@ -33,6 +34,7 @@
         android:background="@color/buttoncolor"
         android:onClick="configADayButton"
         android:text="Configure a Day's Regiment"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
 
 </android.widget.LinearLayout>
