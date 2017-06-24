@@ -20,7 +20,8 @@
         android:background="@color/buttoncolor"
         android:padding="20dp"
         android:text="Dispense a Day's Medicine"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/dispenseindiv"
@@ -35,7 +36,8 @@
         android:onClick="DispenseDayButton"
         android:padding="20dp"
         android:text="Dispense Individual Medicine"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/customize"
@@ -50,5 +52,6 @@
         android:onClick="customizeButtom"
         android:padding="20dp"
         android:text="Customize"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
 </android.widget.LinearLayout>
