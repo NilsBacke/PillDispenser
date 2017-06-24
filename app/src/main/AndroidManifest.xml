@@ -31,7 +31,13 @@
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".Fragments.ConfigADayActivity"
+            android:name=".Fragments.Sunday.SundayActivity"
+            android:label="@string/title_activity_config_aday"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activities.DispenseDayActivity" />
+        <activity android:name=".Activities.DispenseIndivActivity" />
+        <activity
+            android:name=".Activities.ConfigADayActivity"
             android:label="@string/title_activity_config_aday"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

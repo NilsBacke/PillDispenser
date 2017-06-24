@@ -1,6 +1,5 @@
-package com.example.nils.pilldispenser.Fragments;
+package com.example.nils.pilldispenser.Fragments.Sunday;
 
-        import android.content.Intent;
         import android.os.Bundle;
         import android.support.design.widget.TabLayout;
         import android.support.v4.app.Fragment;
@@ -15,7 +14,7 @@ package com.example.nils.pilldispenser.Fragments;
         import java.util.ArrayList;
         import java.util.List;
 
-public class ConfigADayActivity extends AppCompatActivity {
+public class SundayActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -24,7 +23,7 @@ public class ConfigADayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_config_day);
+        setContentView(R.layout.activity_sunday);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -36,24 +35,12 @@ public class ConfigADayActivity extends AppCompatActivity {
         db = PillBayDatabaseHelper.getInstance(this);
     }
 
-    /**
-     * This method is automatically called when a new intent is passed to this activity.
-     * @param intent The passed intent.
-     */
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-    }
-
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new OneFragment(), "Sunday");
-        adapter.addFragment(new TwoFragment(), "Monday");
-        adapter.addFragment(new ThreeFragment(), "Tuesday");
-        adapter.addFragment(new FourFragment(), "Wednesday");
-        adapter.addFragment(new FiveFragment(), "Thursday");
-        adapter.addFragment(new SixFragment(), "Friday");
-        adapter.addFragment(new SevenFragment(), "Saturday");
+        adapter.addFragment(new SundayMornFragment(), "Morning");
+        adapter.addFragment(new SundayAftFragment(), "Afternoon");
+        adapter.addFragment(new SundayEveFragment(), "Evening");
+        adapter.addFragment(new SundayNightFragment(), "Night");
         viewPager.setAdapter(adapter);
     }
 
