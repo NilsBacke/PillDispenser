@@ -16,12 +16,12 @@ import com.example.nils.pilldispenser.R;
 
 import java.util.ArrayList;
 
-public class SundayMornFragment extends Fragment {
+public class SundayAftFragment extends Fragment {
 
     ListView listView;
     ArrayList<ListElement> list;
 
-    public SundayMornFragment() {
+    public SundayAftFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +39,11 @@ public class SundayMornFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sunday_morn, container, false);
         listView = (ListView) view.findViewById(R.id.fraglistview);
         list = new ArrayList<>();
-        list.addAll(((SundayActivity)getActivity()).getList("sundaymorning"));
+        list.addAll(((SundayActivity)getActivity()).getList("sundayafternoon"));
         if (list.isEmpty()) {
             list.addAll(((SundayActivity)getActivity()).getList("pillbay"));
         }
-        ConfigDayFragmentCustomAdapter adapter = new ConfigDayFragmentCustomAdapter(getActivity(), list, 1, 1);
+        ConfigDayFragmentCustomAdapter adapter = new ConfigDayFragmentCustomAdapter(getActivity(), list, 1, 2);
         listView.setAdapter(adapter);
         return view;
     }

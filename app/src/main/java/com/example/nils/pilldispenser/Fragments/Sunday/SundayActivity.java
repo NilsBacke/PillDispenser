@@ -1,20 +1,22 @@
 package com.example.nils.pilldispenser.Fragments.Sunday;
 
+        import android.content.Intent;
         import android.os.Bundle;
+        import android.support.design.widget.NavigationView;
         import android.support.design.widget.TabLayout;
         import android.support.v4.app.Fragment;
         import android.support.v4.app.FragmentManager;
         import android.support.v4.app.FragmentPagerAdapter;
+        import android.support.v4.view.GravityCompat;
         import android.support.v4.view.ViewPager;
-        import android.support.v7.app.AppCompatActivity;
-
+        import com.example.nils.pilldispenser.BaseDrawerActivity;
         import com.example.nils.pilldispenser.ListElement;
         import com.example.nils.pilldispenser.PillBayDatabaseHelper;
         import com.example.nils.pilldispenser.R;
         import java.util.ArrayList;
         import java.util.List;
 
-public class SundayActivity extends AppCompatActivity {
+public class SundayActivity extends BaseDrawerActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -31,16 +33,15 @@ public class SundayActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        // not the same database because diff context?
         db = PillBayDatabaseHelper.getInstance(this);
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new SundayMornFragment(), "Morning");
-        adapter.addFragment(new SundayAftFragment(), "Afternoon");
-        adapter.addFragment(new SundayEveFragment(), "Evening");
-        adapter.addFragment(new SundayNightFragment(), "Night");
+//        adapter.addFragment(new SundayAftFragment(), "Afternoon");
+//        adapter.addFragment(new SundayEveFragment(), "Evening");
+//        adapter.addFragment(new SundayNightFragment(), "Night");
         viewPager.setAdapter(adapter);
     }
 
@@ -76,4 +77,5 @@ public class SundayActivity extends AppCompatActivity {
     public ArrayList<ListElement> getList(String tableName) {
         return db.getAllElements(tableName);
     }
+
 }

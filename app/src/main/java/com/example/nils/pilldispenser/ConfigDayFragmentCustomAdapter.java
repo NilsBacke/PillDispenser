@@ -32,7 +32,7 @@ public class ConfigDayFragmentCustomAdapter extends BaseAdapter implements ListA
      *
      * @param context The context of the class that constructs the object.
      */
-    public ConfigDayFragmentCustomAdapter(Context context, ArrayList<ListElement> listitems, int daynumber) {
+    public ConfigDayFragmentCustomAdapter(Context context, ArrayList<ListElement> listitems, int daynumber, int timeofday) {
         this.context = context;
         db = PillBayDatabaseHelper.getInstance(context);
 
@@ -68,6 +68,21 @@ public class ConfigDayFragmentCustomAdapter extends BaseAdapter implements ListA
                 break;
             default:
                 day = "";
+        }
+
+        switch (timeofday) {
+            case 1:
+                day += "morning";
+                break;
+            case 2:
+                day += "afternoon";
+                break;
+            case 3:
+                day += "evening";
+                break;
+            case 4:
+                day += "night";
+                break;
         }
     }
 
