@@ -44,9 +44,6 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_SAT_EVE = "saturdayevening";
     public static final String TABLE_SAT_NIGHT = "saturdaynight";
 
-
-
-
     public static final String COL_1 = "number";
     public static final String COL_2 = "name";
     public static final String COL_3 = "quantity";
