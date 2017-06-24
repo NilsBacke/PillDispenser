@@ -17,12 +17,35 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_ITEMS = "pillbay";
     public static final String TABLE_SUN_MORN = "sundaymorning";
     public static final String TABLE_SUN_AFT = "sundayafternoon";
-    public static final String TABLE_MON = "monday";
-    public static final String TABLE_TUES = "tuesday";
-    public static final String TABLE_WED = "wednesday";
-    public static final String TABLE_THURS = "thursday";
-    public static final String TABLE_FRI = "friday";
-    public static final String TABLE_SAT = "saturday";
+    public static final String TABLE_SUN_EVE = "sundayevening";
+    public static final String TABLE_SUN_NIGHT = "sundaynight";
+    public static final String TABLE_MON_MORN = "mondaymorning";
+    public static final String TABLE_MON_AFT = "mondayafternoon";
+    public static final String TABLE_MON_EVE= "mondayevening";
+    public static final String TABLE_MON_NIGHT = "mondaynight";
+    public static final String TABLE_TUES_MORN = "tuesdaymorning";
+    public static final String TABLE_TUES_AFT = "tuesdayafternoon";
+    public static final String TABLE_TUES_EVE = "tuesdayevening";
+    public static final String TABLE_TUES_NIGHT = "tuesdaynight";
+    public static final String TABLE_WED_MORN = "wednesdaymorning";
+    public static final String TABLE_WED_AFT = "wednesdayafternoon";
+    public static final String TABLE_WED_EVE = "wednesdayevening";
+    public static final String TABLE_WED_NIGHT = "wednesdaynight";
+    public static final String TABLE_THURS_MORN = "thursdaymorning";
+    public static final String TABLE_THURS_AFT = "thursdayafternoon";
+    public static final String TABLE_THURS_EVE = "thursdayevening";
+    public static final String TABLE_THURS_NIGHT = "thursdaynight";
+    public static final String TABLE_FRI_MORN = "fridaymorning";
+    public static final String TABLE_FRI_AFT = "fridayafternoon";
+    public static final String TABLE_FRI_EVE = "fridayevening";
+    public static final String TABLE_FRI_NIGHT = "fridaynight";
+    public static final String TABLE_SAT_MORN = "saturdaymorning";
+    public static final String TABLE_SAT_AFT = "saturdayafternoon";
+    public static final String TABLE_SAT_EVE = "saturdayevening";
+    public static final String TABLE_SAT_NIGHT = "saturdaynight";
+
+
+
 
     public static final String COL_1 = "number";
     public static final String COL_2 = "name";
@@ -34,17 +57,61 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
             " TEXT," + COL_3 + " TEXT" + ");";
     private static final String CREATE_TABLE_SUN_AFT = "CREATE TABLE " + TABLE_SUN_AFT + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-    private static final String CREATE_TABLE_MON = "CREATE TABLE " + TABLE_MON + " (" + COL_1 + " TEXT," + COL_2 +
+    private static final String CREATE_TABLE_SUN_EVE = "CREATE TABLE " + TABLE_SUN_EVE + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-    private static final String CREATE_TABLE_TUES = "CREATE TABLE " + TABLE_TUES + " (" + COL_1 + " TEXT," + COL_2 +
+    private static final String CREATE_TABLE_SUN_NIGHT = "CREATE TABLE " + TABLE_SUN_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-    private static final String CREATE_TABLE_WED = "CREATE TABLE " + TABLE_WED + " (" + COL_1 + " TEXT," + COL_2 +
+    private static final String CREATE_TABLE_MON_MORN = "CREATE TABLE " + TABLE_MON_MORN + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-    private static final String CREATE_TABLE_THURS = "CREATE TABLE " + TABLE_THURS + " (" + COL_1 + " TEXT," + COL_2 +
+    private static final String CREATE_TABLE_MON_AFT = "CREATE TABLE " + TABLE_MON_AFT + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-    private static final String CREATE_TABLE_FRI = "CREATE TABLE " + TABLE_FRI + " (" + COL_1 + " TEXT," + COL_2 +
+    private static final String CREATE_TABLE_MON_EVE = "CREATE TABLE " + TABLE_MON_EVE + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-    private static final String CREATE_TABLE_SAT = "CREATE TABLE " + TABLE_SAT + " (" + COL_1 + " TEXT," + COL_2 +
+    private static final String CREATE_TABLE_MON_NIGHT = "CREATE TABLE " + TABLE_MON_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+
+    private static final String CREATE_TABLE_TUES_MORN = "CREATE TABLE " + TABLE_TUES_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+
+    private static final String CREATE_TABLE_TUES_AFT = "CREATE TABLE " + TABLE_TUES_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+
+    private static final String CREATE_TABLE_TUES_EVE = "CREATE TABLE " + TABLE_TUES_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+
+    private static final String CREATE_TABLE_TUES_NIGHT = "CREATE TABLE " + TABLE_TUES_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_WED_MORN = "CREATE TABLE " + TABLE_WED_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_WED_AFT = "CREATE TABLE " + TABLE_WED_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_WED_EVE = "CREATE TABLE " + TABLE_WED_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_WED_NIGHT = "CREATE TABLE " + TABLE_WED_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_THURS_MORN = "CREATE TABLE " + TABLE_THURS_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_THURS_AFT = "CREATE TABLE " + TABLE_THURS_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_THURS_EVE = "CREATE TABLE " + TABLE_THURS_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_THURS_NIGHT = "CREATE TABLE " + TABLE_THURS_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_FRI_MORN = "CREATE TABLE " + TABLE_FRI_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_FRI_AFT = "CREATE TABLE " + TABLE_FRI_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_FRI_EVE = "CREATE TABLE " + TABLE_FRI_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_FRI_NIGHT = "CREATE TABLE " + TABLE_FRI_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SAT_MORN = "CREATE TABLE " + TABLE_SAT_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SAT_AFT = "CREATE TABLE " + TABLE_SAT_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SAT_EVE = "CREATE TABLE " + TABLE_SAT_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SAT_NIGHT = "CREATE TABLE " + TABLE_SAT_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
 
     private static PillBayDatabaseHelper sInstance;
@@ -73,13 +140,34 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_ITEMS);
-        db.execSQL(CREATE_TABLE_SUN);
-        db.execSQL(CREATE_TABLE_MON);
-        db.execSQL(CREATE_TABLE_TUES);
-        db.execSQL(CREATE_TABLE_WED);
-        db.execSQL(CREATE_TABLE_THURS);
-        db.execSQL(CREATE_TABLE_FRI);
-        db.execSQL(CREATE_TABLE_SAT);
+        db.execSQL(CREATE_TABLE_SUN_MORN);
+        db.execSQL(CREATE_TABLE_SUN_AFT);
+        db.execSQL(CREATE_TABLE_SUN_EVE);
+        db.execSQL(CREATE_TABLE_SUN_NIGHT);
+        db.execSQL(CREATE_TABLE_MON_MORN);
+        db.execSQL(CREATE_TABLE_MON_AFT);
+        db.execSQL(CREATE_TABLE_MON_EVE);
+        db.execSQL(CREATE_TABLE_MON_NIGHT);
+        db.execSQL(CREATE_TABLE_TUES_MORN);
+        db.execSQL(CREATE_TABLE_TUES_AFT);
+        db.execSQL(CREATE_TABLE_TUES_EVE);
+        db.execSQL(CREATE_TABLE_TUES_NIGHT);
+        db.execSQL(CREATE_TABLE_WED_MORN);
+        db.execSQL(CREATE_TABLE_WED_AFT);
+        db.execSQL(CREATE_TABLE_WED_EVE);
+        db.execSQL(CREATE_TABLE_WED_NIGHT);
+        db.execSQL(CREATE_TABLE_THURS_MORN);
+        db.execSQL(CREATE_TABLE_THURS_AFT);
+        db.execSQL(CREATE_TABLE_THURS_EVE);
+        db.execSQL(CREATE_TABLE_THURS_NIGHT);
+        db.execSQL(CREATE_TABLE_FRI_MORN);
+        db.execSQL(CREATE_TABLE_FRI_AFT);
+        db.execSQL(CREATE_TABLE_FRI_EVE);
+        db.execSQL(CREATE_TABLE_FRI_NIGHT);
+        db.execSQL(CREATE_TABLE_SAT_MORN);
+        db.execSQL(CREATE_TABLE_SAT_AFT);
+        db.execSQL(CREATE_TABLE_SAT_EVE);
+        db.execSQL(CREATE_TABLE_SAT_NIGHT);
     }
 
     /**
@@ -91,13 +179,34 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_ITEMS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUN);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_MON);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TUES);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WED);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_THURS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FRI);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SAT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUN_MORN);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUN_AFT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUN_EVE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SUN_NIGHT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_MON_MORN);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_MON_AFT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_MON_EVE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_MON_NIGHT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TUES_MORN);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TUES_AFT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TUES_EVE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TUES_NIGHT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WED_MORN);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WED_AFT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WED_EVE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_WED_NIGHT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_THURS_MORN);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_THURS_AFT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_THURS_EVE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_THURS_NIGHT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FRI_MORN);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FRI_AFT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FRI_EVE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FRI_NIGHT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SAT_MORN);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SAT_AFT);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SAT_EVE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SAT_NIGHT);
         onCreate(db);
     }
 
