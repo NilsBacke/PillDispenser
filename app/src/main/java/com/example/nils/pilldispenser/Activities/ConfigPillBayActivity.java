@@ -26,7 +26,6 @@ public class ConfigPillBayActivity extends AppCompatActivity {
     ArrayList<ListElement> itemlist;
     int counter;
     PillBayDatabaseHelper db;
-    SharedPreferences savedlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +35,6 @@ public class ConfigPillBayActivity extends AppCompatActivity {
         itemlist = new ArrayList<>();
         counter = 0;
         db = new PillBayDatabaseHelper(this);
-
-        savedlist = getSharedPreferences("list", MODE_PRIVATE);
 
         itemlist.addAll(db.getAllElements("pillbay"));
 

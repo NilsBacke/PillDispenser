@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -19,8 +20,9 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
 
     DrawerLayout drawerLayout;
     Toolbar toolbar;
-    FrameLayout frameLayout;
+    public FrameLayout frameLayout;
     NavigationView navigationView;
+    ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,16 +32,17 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        frameLayout = (FrameLayout) findViewById(R.id.content_frame);
+        frameLayout = (FrameLayout) findViewById(R.id.content_frame);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.setDrawerListener(toggle);
         toggle.syncState();
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -66,17 +69,40 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         } else if (id == R.id.nav_monday) {
             startActivity(new Intent(getApplicationContext(), MondayActivity.class));
         } else if (id == R.id.nav_tuesday) {
-            startActivity(new Intent(getApplicationContext(), TuesdayActivity.class));
+//            startActivity(new Intent(getApplicationContext(), TuesdayActivity.class));
         } else if (id == R.id.nav_wednesday) {
-            startActivity(new Intent(getApplicationContext(), WednesdayActivity.class));
+//            startActivity(new Intent(getApplicationContext(), WednesdayActivity.class));
         } else if (id == R.id.nav_thursday) {
-            startActivity(new Intent(getApplicationContext(), ThursdayActivity.class));
+//            startActivity(new Intent(getApplicationContext(), ThursdayActivity.class));
         } else if (id == R.id.nav_friday) {
-            startActivity(new Intent(getApplicationContext(), FridayActivity.class));
+//            startActivity(new Intent(getApplicationContext(), FridayActivity.class));
         } else if (id == R.id.nav_saturday) {
-            startActivity(new Intent(getApplicationContext(), SaturdayActivity.class));
+//            startActivity(new Intent(getApplicationContext(), SaturdayActivity.class));
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /**
+     * This method is called upon startup to create the options menu.
+     * Gets the menu object from the xml.
+     * @param menu The options menu.
+     * @return Always true.
+     */
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_config_day_drawer, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle, if it returns
+        // true, then it has handled the app icon touch event
+        if (toggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        // Handle your other action bar items...
+
+        return super.onOptionsItemSelected(item);
     }
 }

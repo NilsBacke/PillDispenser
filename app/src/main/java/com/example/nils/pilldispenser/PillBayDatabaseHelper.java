@@ -12,7 +12,7 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
     /**
      * A column for each piece of data is created.
      */
-    public static final String DATABASE_NAME = "pillandday.db";
+    public static final String DATABASE_NAME = "pills.db";
 
     public static final String TABLE_ITEMS = "pillbay";
     public static final String TABLE_SUN_MORN = "sundaymorning";

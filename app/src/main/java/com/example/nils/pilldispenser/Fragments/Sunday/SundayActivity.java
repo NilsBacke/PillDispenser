@@ -9,6 +9,8 @@ package com.example.nils.pilldispenser.Fragments.Sunday;
         import android.support.v4.app.FragmentPagerAdapter;
         import android.support.v4.view.GravityCompat;
         import android.support.v4.view.ViewPager;
+        import android.view.MenuItem;
+
         import com.example.nils.pilldispenser.BaseDrawerActivity;
         import com.example.nils.pilldispenser.ListElement;
         import com.example.nils.pilldispenser.PillBayDatabaseHelper;
@@ -25,7 +27,7 @@ public class SundayActivity extends BaseDrawerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sunday);
+        getLayoutInflater().inflate(R.layout.activity_sunday, frameLayout);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -34,14 +36,15 @@ public class SundayActivity extends BaseDrawerActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         db = PillBayDatabaseHelper.getInstance(this);
+        setTitle("Sunday");
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new SundayMornFragment(), "Morning");
-//        adapter.addFragment(new SundayAftFragment(), "Afternoon");
-//        adapter.addFragment(new SundayEveFragment(), "Evening");
-//        adapter.addFragment(new SundayNightFragment(), "Night");
+        adapter.addFragment(new SundayAftFragment(), "Afternoon");
+        adapter.addFragment(new SundayEveFragment(), "Evening");
+        adapter.addFragment(new SundayNightFragment(), "Night");
         viewPager.setAdapter(adapter);
     }
 
@@ -77,5 +80,7 @@ public class SundayActivity extends BaseDrawerActivity {
     public ArrayList<ListElement> getList(String tableName) {
         return db.getAllElements(tableName);
     }
+
+
 
 }
