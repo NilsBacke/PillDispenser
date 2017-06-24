@@ -36,15 +36,6 @@ public class ConfigADayActivity extends AppCompatActivity {
         db = PillBayDatabaseHelper.getInstance(this);
     }
 
-    /**
-     * This method is automatically called when a new intent is passed to this activity.
-     * @param intent The passed intent.
-     */
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-    }
-
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new OneFragment(), "Sunday");
