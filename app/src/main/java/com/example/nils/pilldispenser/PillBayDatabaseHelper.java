@@ -208,6 +208,7 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SAT_EVE);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SAT_NIGHT);
         onCreate(db);
+        //push
     }
 
     /**
