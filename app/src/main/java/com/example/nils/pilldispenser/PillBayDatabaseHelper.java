@@ -66,16 +66,12 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
             " TEXT," + COL_3 + " TEXT" + ");";
     private static final String CREATE_TABLE_MON_NIGHT = "CREATE TABLE " + TABLE_MON_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-
     private static final String CREATE_TABLE_TUES_MORN = "CREATE TABLE " + TABLE_TUES_MORN + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-
     private static final String CREATE_TABLE_TUES_AFT = "CREATE TABLE " + TABLE_TUES_AFT + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-
     private static final String CREATE_TABLE_TUES_EVE = "CREATE TABLE " + TABLE_TUES_EVE + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-
     private static final String CREATE_TABLE_TUES_NIGHT = "CREATE TABLE " + TABLE_TUES_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
     private static final String CREATE_TABLE_WED_MORN = "CREATE TABLE " + TABLE_WED_MORN + " (" + COL_1 + " TEXT," + COL_2 +

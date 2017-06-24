@@ -15,8 +15,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void DispenseDayButton(View view) {
+    public void DispenseIndivButton(View view) {
         Intent intent = new Intent(MainActivity.this, DispenseIndivActivity.class);
+        startActivity(intent);
+    }
+
+    public void DispenseDayButton(View view) {
+        Intent intent = new Intent(MainActivity.this, DispenseDayActivity.class);
         startActivity(intent);
     }
 

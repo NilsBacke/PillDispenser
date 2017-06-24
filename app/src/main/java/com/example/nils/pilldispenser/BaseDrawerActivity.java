@@ -13,8 +13,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.example.nils.pilldispenser.Fragments.Friday.FridayActivity;
 import com.example.nils.pilldispenser.Fragments.Monday.MondayActivity;
+import com.example.nils.pilldispenser.Fragments.Saturday.SaturdayActivity;
 import com.example.nils.pilldispenser.Fragments.Sunday.SundayActivity;
+import com.example.nils.pilldispenser.Fragments.Thursday.ThursdayActivity;
+import com.example.nils.pilldispenser.Fragments.Tuesday.TuesdayActivity;
+import com.example.nils.pilldispenser.Fragments.Wednesday.WednesdayActivity;
 
 public class BaseDrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -69,15 +74,15 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         } else if (id == R.id.nav_monday) {
             startActivity(new Intent(getApplicationContext(), MondayActivity.class));
         } else if (id == R.id.nav_tuesday) {
-//            startActivity(new Intent(getApplicationContext(), TuesdayActivity.class));
+            startActivity(new Intent(getApplicationContext(), TuesdayActivity.class));
         } else if (id == R.id.nav_wednesday) {
-//            startActivity(new Intent(getApplicationContext(), WednesdayActivity.class));
+            startActivity(new Intent(getApplicationContext(), WednesdayActivity.class));
         } else if (id == R.id.nav_thursday) {
-//            startActivity(new Intent(getApplicationContext(), ThursdayActivity.class));
+            startActivity(new Intent(getApplicationContext(), ThursdayActivity.class));
         } else if (id == R.id.nav_friday) {
-//            startActivity(new Intent(getApplicationContext(), FridayActivity.class));
+            startActivity(new Intent(getApplicationContext(), FridayActivity.class));
         } else if (id == R.id.nav_saturday) {
-//            startActivity(new Intent(getApplicationContext(), SaturdayActivity.class));
+            startActivity(new Intent(getApplicationContext(), SaturdayActivity.class));
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
