@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.nils.pilldispenser.Fragments.ConfigADayActivity;
+import com.example.nils.pilldispenser.Fragments.Sunday.SundayActivity;
 import com.example.nils.pilldispenser.R;
 
 public class CustomizeActivity extends AppCompatActivity {
@@ -22,7 +22,7 @@ public class CustomizeActivity extends AppCompatActivity {
     }
 
     public void configADayButton(View view) {
-        Intent intent = new Intent(CustomizeActivity.this, ConfigADayActivity.class);
+        Intent intent = new Intent(CustomizeActivity.this, SundayActivity.class);
         startActivity(intent);
     }
 }

@@ -15,7 +15,8 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "pillandday.db";
 
     public static final String TABLE_ITEMS = "pillbay";
-    public static final String TABLE_SUN = "sunday";
+    public static final String TABLE_SUN_MORN = "sundaymorning";
+    public static final String TABLE_SUN_AFT = "sundayafternoon";
     public static final String TABLE_MON = "monday";
     public static final String TABLE_TUES = "tuesday";
     public static final String TABLE_WED = "wednesday";
@@ -29,7 +30,9 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_ITEMS = "CREATE TABLE " + TABLE_ITEMS + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
-    private static final String CREATE_TABLE_SUN = "CREATE TABLE " + TABLE_SUN + " (" + COL_1 + " TEXT," + COL_2 +
+    private static final String CREATE_TABLE_SUN_MORN = "CREATE TABLE " + TABLE_SUN_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SUN_AFT = "CREATE TABLE " + TABLE_SUN_AFT + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";
     private static final String CREATE_TABLE_MON = "CREATE TABLE " + TABLE_MON + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT" + ");";

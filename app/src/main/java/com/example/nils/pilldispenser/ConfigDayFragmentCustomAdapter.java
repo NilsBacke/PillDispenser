@@ -14,8 +14,6 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.nils.pilldispenser.Fragments.ConfigADayActivity;
-
 import java.util.ArrayList;
 
 /**
