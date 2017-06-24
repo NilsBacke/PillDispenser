@@ -1,4 +1,4 @@
-package com.example.nils.pilldispenser.Fragments.Monday;
+package com.example.nils.pilldispenser.Fragments.Tuesday;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +18,7 @@ import com.example.nils.pilldispenser.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MondayActivity extends BaseDrawerActivity {
+public class TuesdayActivity extends BaseDrawerActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -27,7 +27,7 @@ public class MondayActivity extends BaseDrawerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getLayoutInflater().inflate(R.layout.activity_monday, frameLayout);
+        getLayoutInflater().inflate(R.layout.activity_tuesday, frameLayout);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -36,15 +36,15 @@ public class MondayActivity extends BaseDrawerActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         db = PillBayDatabaseHelper.getInstance(this);
-        setTitle("Monday");
+        setTitle("Tuesday");
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new MondayMornFragment(), "Morning");
-        adapter.addFragment(new MondayAftFragment(), "Afternoon");
-        adapter.addFragment(new MondayEveFragment(), "Evening");
-        adapter.addFragment(new MondayNightFragment(), "Night");
+        adapter.addFragment(new TuesdayMornFragment(), "Morning");
+        adapter.addFragment(new TuesdayAftFragment(), "Afternoon");
+        adapter.addFragment(new TuesdayEveFragment(), "Evening");
+        adapter.addFragment(new TuesdayNightFragment(), "Night");
         viewPager.setAdapter(adapter);
     }
 
@@ -84,3 +84,4 @@ public class MondayActivity extends BaseDrawerActivity {
 
 
 }
+

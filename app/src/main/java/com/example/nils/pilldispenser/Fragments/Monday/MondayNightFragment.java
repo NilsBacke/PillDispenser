@@ -1,4 +1,4 @@
-package com.example.nils.pilldispenser.Fragments.Sunday;
+package com.example.nils.pilldispenser.Fragments.Monday;
 
 import android.content.Context;
 import android.net.Uri;
@@ -16,12 +16,12 @@ import com.example.nils.pilldispenser.R;
 
 import java.util.ArrayList;
 
-public class SundayAftFragment extends Fragment {
+public class MondayNightFragment extends Fragment {
 
     ListView listView;
     ArrayList<ListElement> list;
 
-    public SundayAftFragment() {
+    public MondayNightFragment() {
         // Required empty public constructor
     }
 
@@ -36,14 +36,14 @@ public class SundayAftFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         // Inflate the layout for this fragment 
-        View view = inflater.inflate(R.layout.fragment_sunday_aft, container, false);
+        View view = inflater.inflate(R.layout.fragment_monday_night, container, false);
         listView = (ListView) view.findViewById(R.id.fraglistview);
         list = new ArrayList<>();
-        list.addAll(((SundayActivity)getActivity()).getList("sundayafternoon"));
+        list.addAll(((MondayActivity)getActivity()).getList("mondaynight"));
         if (list.isEmpty()) {
-            list.addAll(((SundayActivity)getActivity()).getList("pillbay"));
+            list.addAll(((MondayActivity)getActivity()).getList("pillbay"));
         }
-        ConfigDayFragmentCustomAdapter adapter = new ConfigDayFragmentCustomAdapter(getActivity(), list, 1, 2);
+        ConfigDayFragmentCustomAdapter adapter = new ConfigDayFragmentCustomAdapter(getActivity(), list, 2, 4);
         listView.setAdapter(adapter);
         return view;
     }

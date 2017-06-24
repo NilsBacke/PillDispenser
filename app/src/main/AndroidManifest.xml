@@ -37,7 +37,15 @@
         <activity android:name=".Activities.DispenseDayActivity" />
         <activity android:name=".Activities.DispenseIndivActivity" />
         <activity android:name=".Fragments.Monday.MondayActivity" />
-        <activity android:name=".BaseDrawerActivity"></activity>
+        <activity android:name=".BaseDrawerActivity" />
+        <activity
+            android:name=".Fragments.Tuesday.TuesdayActivity"
+            android:label="@string/title_activity_tuesday"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Fragments.Wednesday.WednesdayActivity" />
+        <activity android:name=".Fragments.Thursday.ThursdayActivity" />
+        <activity android:name=".Fragments.Friday.FridayActivity" />
+        <activity android:name=".Fragments.Saturday.SaturdayActivity"></activity>
     </application>
 
 </manifest>
