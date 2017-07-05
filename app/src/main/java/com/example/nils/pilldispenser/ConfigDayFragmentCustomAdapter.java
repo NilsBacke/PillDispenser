@@ -3,6 +3,7 @@ package com.example.nils.pilldispenser;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -194,6 +195,10 @@ public class ConfigDayFragmentCustomAdapter extends BaseAdapter implements ListA
                 });
                 AlertDialog alertDialog = d.create();
                 alertDialog.show();
+                Button nbutton = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+                nbutton.setTextColor(Color.BLACK);
+                Button ybutton = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+                ybutton.setTextColor(Color.BLACK);
 
             }
         });

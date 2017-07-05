@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.example.nils.pilldispenser.Activities.CustomizeActivity;
 import com.example.nils.pilldispenser.Fragments.Friday.FridayActivity;
 import com.example.nils.pilldispenser.Fragments.Monday.MondayActivity;
 import com.example.nils.pilldispenser.Fragments.Saturday.SaturdayActivity;
@@ -96,6 +97,7 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
      */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_config_day_drawer, menu);
+        getMenuInflater().inflate(R.menu.backarrowmenu, menu);
         return true;
     }
 
@@ -106,7 +108,12 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         if (toggle.onOptionsItemSelected(item)) {
             return true;
         }
-        // Handle your other action bar items...
+
+        switch (item.getItemId()) {
+            case R.id.backarrow:
+                startActivity(new Intent(BaseDrawerActivity.this, CustomizeActivity.class));
+                return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
