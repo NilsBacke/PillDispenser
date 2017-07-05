@@ -55,7 +55,63 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_ITEMS = "CREATE TABLE " + TABLE_ITEMS + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
-    //push
+    private static final String CREATE_TABLE_SUN_MORN = "CREATE TABLE " + TABLE_SUN_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SUN_AFT = "CREATE TABLE " + TABLE_SUN_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SUN_EVE = "CREATE TABLE " + TABLE_SUN_EVE+ " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SUN_NIGHT = "CREATE TABLE " + TABLE_SUN_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_MON_MORN = "CREATE TABLE " + TABLE_MON_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_MON_AFT = "CREATE TABLE " + TABLE_MON_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_MON_EVE = "CREATE TABLE " + TABLE_MON_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_MON_NIGHT = "CREATE TABLE " + TABLE_MON_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_TUES_MORN = "CREATE TABLE " + TABLE_TUES_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_TUES_AFT = "CREATE TABLE " + TABLE_TUES_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_TUES_EVE = "CREATE TABLE " + TABLE_TUES_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_TUES_NIGHT = "CREATE TABLE " + TABLE_TUES_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_WED_MORN = "CREATE TABLE " + TABLE_WED_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_WED_AFT = "CREATE TABLE " + TABLE_WED_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_WED_EVE = "CREATE TABLE " + TABLE_WED_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_WED_NIGHT = "CREATE TABLE " + TABLE_WED_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_THURS_MORN = "CREATE TABLE " + TABLE_THURS_MORN+ " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_THURS_AFT = "CREATE TABLE " + TABLE_THURS_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_THURS_EVE = "CREATE TABLE " + TABLE_THURS_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_THURS_NIGHT = "CREATE TABLE " + TABLE_THURS_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_FRI_MORN = "CREATE TABLE " + TABLE_FRI_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_FRI_AFT = "CREATE TABLE " + TABLE_FRI_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_FRI_EVE = "CREATE TABLE " + TABLE_FRI_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_FRI_NIGHT = "CREATE TABLE " + TABLE_FRI_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SAT_MORN = "CREATE TABLE " + TABLE_SAT_MORN + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SAT_AFT= "CREATE TABLE " + TABLE_SAT_AFT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SAT_EVE = "CREATE TABLE " + TABLE_SAT_EVE + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    private static final String CREATE_TABLE_SAT_NIGHT = "CREATE TABLE " + TABLE_SAT_NIGHT + " (" + COL_1 + " TEXT," + COL_2 +
+            " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+
 
     private static PillBayDatabaseHelper sInstance;
 
