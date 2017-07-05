@@ -51,6 +51,7 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_ITEMS = "CREATE TABLE " + TABLE_ITEMS + " (" + COL_1 + " TEXT," + COL_2 +
             " TEXT," + COL_3 + " TEXT," + COL_4 + " TEXT" + ");";
+    //push
 
     private static PillBayDatabaseHelper sInstance;
 
