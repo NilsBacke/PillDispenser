@@ -5,8 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class PillBayDatabaseHelper extends SQLiteOpenHelper {
     /**
@@ -159,6 +163,8 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
         values.put(COL_1, item.getNumber());
         values.put(COL_2, item.getName());
         values.put(COL_3, item.getQuantity());
+        values.put(COL_4, item.getTime().toString());
+        Log.i("DATE", item.getTime().toString());
         db.insert(tableName, null, values);
         db.close(); // Closing database connection
     }
@@ -180,6 +186,13 @@ public class PillBayDatabaseHelper extends SQLiteOpenHelper {
                 item.setNumber(Integer.parseInt(cursor.getString(0)));
                 item.setName(cursor.getString(1));
                 item.setQuantity(Integer.parseInt(cursor.getString(2)));
+                Date date = null;
+                try {
+                    date = new SimpleDateFormat("dd/MM/yyyy").parse(cursor.getString(3));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                item.setTime(date);
                 // Adding item to list
                 itemlist.add(item);
             } while (cursor.moveToNext());

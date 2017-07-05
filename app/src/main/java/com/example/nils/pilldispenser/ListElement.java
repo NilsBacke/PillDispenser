@@ -3,6 +3,8 @@ package com.example.nils.pilldispenser;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Date;
+
 /**
  * Created by Nils on 6/15/17.
  */
@@ -12,6 +14,7 @@ public class ListElement {
     public String name;
     public int number;
     public int quantity;
+    public Date time;
 
     public ListElement() {
         number = 0;
@@ -37,6 +40,13 @@ public class ListElement {
         this.quantity = quantity;
     }
 
+    public ListElement(int number, String name, int quantity, Date time) {
+        this.number = number;
+        this.name = name;
+        this.quantity = quantity;
+        this.time = time;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -57,6 +67,14 @@ public class ListElement {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
+    public Date getTime() {
+        return time;
     }
 
 }

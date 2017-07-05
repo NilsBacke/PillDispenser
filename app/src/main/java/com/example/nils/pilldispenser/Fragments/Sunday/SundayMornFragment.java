@@ -18,7 +18,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.nils.pilldispenser.ConfigDayFragmentCustomAdapter;
+import com.example.nils.pilldispenser.DayRegiment;
 import com.example.nils.pilldispenser.ListElement;
+import com.example.nils.pilldispenser.PillBayDatabaseHelper;
 import com.example.nils.pilldispenser.R;
 
 import java.util.ArrayList;
@@ -54,12 +56,21 @@ public class SundayMornFragment extends Fragment {
         ConfigDayFragmentCustomAdapter adapter = new ConfigDayFragmentCustomAdapter(getActivity(), list, 1, 1);
         listView.setAdapter(adapter);
 
+
+
+
+        final PillBayDatabaseHelper db = PillBayDatabaseHelper.getInstance(getActivity());
+        final String day = "sundaymorning";
+
+
         Button changeTime = (Button) view.findViewById(R.id.button2);
 
         changeTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ArrayList<ListElement> items = new ArrayList<>();
                 final TextClock textClock = (TextClock) view.findViewById(R.id.textClock2);
+                String textClockStr = (String) textClock.getText();
                 Calendar mcurrentTime = Calendar.getInstance();
                 int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
                 int minute = mcurrentTime.get(Calendar.MINUTE);
@@ -72,8 +83,21 @@ public class SundayMornFragment extends Fragment {
                 }, hour, minute, false); //No 24 hour time
                 mTimePicker.setTitle("Select Time");
                 mTimePicker.show();
+
+                if (!textClockStr.equals(textClock.getText())) {
+                    if (!db.getAllElements(day).isEmpty()) {
+                        items.addAll(db.getAllElements(day));
+                        db.clearDatabase(day);
+                    }
+
+                    for (ListElement element: items) {
+                        db.addElement(day, element);
+                    }
+                }
+
             }
         });
+
         return view;
     }
 
